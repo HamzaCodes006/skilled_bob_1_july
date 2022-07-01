@@ -889,7 +889,7 @@ class _DashboardState extends State<Dashboard> {
                             ),
                           Text(
                             "Dashboard",
-                            style: Theme.of(context).textTheme.headline6,
+                            style: Theme.of(context).textTheme.headline5,
                           ),
                           Spacer(flex: Responsive.isDesktop(context) ? 2 : 1),
                           Expanded(
@@ -910,9 +910,9 @@ class _DashboardState extends State<Dashboard> {
                                     setState(() {
                                       convert = !convert;
 
-                                      Navigator.pushReplacementNamed(context, ProviderProfileScreen.id);
-                                    }
-                                    );
+                                      Navigator.pushReplacementNamed(
+                                          context, ProviderProfileScreen.id);
+                                    });
                                   }),
                             ),
                           ),
@@ -1915,15 +1915,17 @@ class SideMenu extends StatelessWidget {
               selected: selected == 3 ? true : false,
             ),
             DrawerListTile(
-              title: "Post A Job",
+              title: "Post A Request",
               svgSrc: Icon(
                 Icons.post_add,
                 color: selected == 4 ? Colors.white : Colors.black,
                 size: 16,
               ),
               press: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => PostARequestCustomer()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => PostARequestCustomer()));
               },
               selected: selected == 4 ? true : false,
             ),
@@ -1938,19 +1940,19 @@ class SideMenu extends StatelessWidget {
               press: () {},
               selected: selected == 5 ? true : false,
             ),
-            DrawerListTile(
-              title: "Request",
-              svgSrc: Icon(
-                Icons.local_post_office_outlined,
-                color: selected == 6 ? Colors.white : Colors.black,
-                size: 16,
-              ),
-              press: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Request()));
-              },
-              selected: selected == 6 ? true : false,
-            ),
+            // DrawerListTile(
+            //   title: "Request",
+            //   svgSrc: Icon(
+            //     Icons.local_post_office_outlined,
+            //     color: selected == 6 ? Colors.white : Colors.black,
+            //     size: 16,
+            //   ),
+            //   press: () {
+            //     Navigator.push(context,
+            //         MaterialPageRoute(builder: (context) => Request()));
+            //   },
+            //   selected: selected == 6 ? true : false,
+            // ),
             DrawerListTile(
               title: "Log Out",
               svgSrc: Icon(
@@ -1959,7 +1961,7 @@ class SideMenu extends StatelessWidget {
                 size: 16,
               ),
               press: () {
-                Navigator.push(context,
+                Navigator.pushReplacement(context,
                     MaterialPageRoute(builder: (context) => LoginScreen()));
               },
               selected: selected == 6 ? true : false,

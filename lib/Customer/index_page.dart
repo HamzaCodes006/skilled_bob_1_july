@@ -501,13 +501,13 @@ class _IndexPageState extends State<IndexPage> {
                           'images/horizontalLogo.png',
                           scale: 4,
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(
+                        const Padding(
+                          padding: EdgeInsets.only(
                               left: 45.0, top: 20, bottom: 10, right: 10),
-                          child: Container(
+                          child: SizedBox(
                             width: 350,
-                            child: const Text(
-                              'FreeSVG.org offers free vector images in SVG format with Creative Commons 0 license (public domain). You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission.',
+                            child: Text(
+                              'Skilledbob is the easiest and best way to find the perfect service provider for your needs. Whether you are looking for a plumber, hairdresser, car service, carpenter, web designer or a music band. Don\'t worry, get the best BOB to do the job and service you need.',
                               textAlign: TextAlign.justify,
                               style: TextStyle(
                                 color: Colors.white,
@@ -520,11 +520,11 @@ class _IndexPageState extends State<IndexPage> {
                     ),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.start,
-                      children: const [
-                        SizedBox(
+                      children: [
+                        const SizedBox(
                           height: 50,
                         ),
-                        Text(
+                        const Text(
                           'SITE LINKS',
                           style: TextStyle(
                             color: Colors.white,
@@ -532,32 +532,62 @@ class _IndexPageState extends State<IndexPage> {
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        SizedBox(height: 10.0),
-                        Text(
-                          'Home',
-                          style: TextStyle(
-                            color: Colors.white,
+                        // const SizedBox(height: 10.0),
+                        // TextButton(
+                        //   onPressed: () {},
+                        //   child: const Text(
+                        //     'Home',
+                        //     style: TextStyle(
+                        //       color: Colors.white,
+                        //     ),
+                        //   ),
+                        // ),
+                        const SizedBox(height: 10.0),
+                        TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const Dashboard()));
+                          },
+                          child: const Text(
+                            'My Profile',
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
                           ),
                         ),
-                        SizedBox(height: 10.0),
-                        Text(
-                          'My Profile',
-                          style: TextStyle(
-                            color: Colors.white,
+                        const SizedBox(height: 10.0),
+                        TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const Categories()));
+                          },
+                          child: const Text(
+                            'Categories',
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
                           ),
                         ),
-                        SizedBox(height: 10.0),
-                        Text(
-                          'Categories',
-                          style: TextStyle(
-                            color: Colors.white,
-                          ),
-                        ),
-                        SizedBox(height: 10.0),
-                        Text(
-                          'Post A Requests',
-                          style: TextStyle(
-                            color: Colors.white,
+                        const SizedBox(height: 10.0),
+                        TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    const PostARequestCustomer(),
+                              ),
+                            );
+                          },
+                          child: const Text(
+                            'Post A Requests',
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
                           ),
                         ),
                       ],
@@ -584,10 +614,13 @@ class _IndexPageState extends State<IndexPage> {
                               color: kLightBlue,
                               onPressed: () {},
                             ),
-                            const Text(
-                              'Twitter',
-                              style: TextStyle(
-                                color: Colors.white,
+                            TextButton(
+                              onPressed: () {},
+                              child: const Text(
+                                'Twitter',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                ),
                               ),
                             ),
                           ],
@@ -596,14 +629,17 @@ class _IndexPageState extends State<IndexPage> {
                         Row(
                           children: [
                             IconButton(
-                                icon: Icon(FontAwesomeIcons.facebook),
+                                icon: const Icon(FontAwesomeIcons.facebook),
                                 tooltip: 'Facebook',
                                 color: kLightBlue,
                                 onPressed: () {}),
-                            const Text(
-                              'Facebook',
-                              style: TextStyle(
-                                color: Colors.white,
+                            TextButton(
+                              onPressed: () {},
+                              child: const Text(
+                                'Facebook',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                ),
                               ),
                             ),
                           ],
@@ -616,10 +652,13 @@ class _IndexPageState extends State<IndexPage> {
                                 tooltip: 'Instagram',
                                 color: kLightBlue,
                                 onPressed: () {}),
-                            const Text(
-                              'Instagram',
-                              style: TextStyle(
-                                color: Colors.white,
+                            TextButton(
+                              onPressed: () {},
+                              child: const Text(
+                                'Instagram',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                ),
                               ),
                             ),
                           ],
@@ -652,13 +691,6 @@ class _IndexPageState extends State<IndexPage> {
                         ),
                       ],
                     ),
-                    // const Padding(
-                    //   padding: EdgeInsets.all(8.0),
-                    //   child: Text(
-                    //     'Community: SkilledBob Productions',
-                    //     style: TextStyle(fontSize: 12.0, color: Colors.white),
-                    //   ),
-                    // )
                   ],
                 ),
               ),

@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../Provider/provider_profile_screen.dart';
 import '../constant.dart';
 import '../responsive.dart';
 import 'dashboard.dart';
@@ -16,6 +17,7 @@ class MyBookings extends StatefulWidget {
 
 class _MyBookingsState extends State<MyBookings> {
   int initial_page = 0;
+  bool convert = false;
 
   @override
   Widget build(BuildContext context) {
@@ -1261,46 +1263,69 @@ class _MyBookingsState extends State<MyBookings> {
                               icon: Icon(Icons.menu),
                             ),
                           Text(
-                            "Dashboard",
-                            style: Theme.of(context).textTheme.headline6,
+                            "Booking",
+                            style: Theme.of(context).textTheme.headline5,
                           ),
                           Spacer(flex: Responsive.isDesktop(context) ? 2 : 1),
-                          //Expanded(child: SearchField()),
-                          Container(
-                            margin: const EdgeInsets.only(left: 16),
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 16,
-                              vertical: 16 / 2,
-                            ),
-                            decoration: BoxDecoration(
-                              //color: const Color(0xFF2A2D3E),
-                              borderRadius:
-                                  const BorderRadius.all(Radius.circular(10)),
-                              border: Border.all(color: Colors.white10),
-                            ),
-                            child: Row(
-                              children: [
-                                if (!Responsive.isMobile(context))
-                                  const Padding(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 16 / 2),
-                                    child: Text(
-                                      "Switch To Provider",
-                                      style: TextStyle(
-                                        color: CupertinoColors.black,
-                                      ),
-                                    ),
+                          Expanded(
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: SwitchListTile(
+                                  title: const Text(
+                                    'Customer Mode',
+                                    style: kBodyTextBlack,
                                   ),
-                                //Icon(Icons.keyboard_arrow_down),
-                                Switch.adaptive(
-                                  value: false,
-                                  inactiveThumbColor: Colors.blue,
-                                  inactiveTrackColor: Colors.black45,
-                                  onChanged: (value) {},
-                                ),
-                              ],
+                                  subtitle: const Text(
+                                    'Turn switch on to go to provider Mode.',
+                                    style: kBodyTextGrey,
+                                  ),
+                                  activeColor: kLightBlue,
+                                  value: convert,
+                                  onChanged: (selected) {
+                                    setState(() {
+                                      convert = !convert;
+
+                                      Navigator.pushReplacementNamed(
+                                          context, ProviderProfileScreen.id);
+                                    });
+                                  }),
                             ),
                           ),
+                          // Container(
+                          //   margin: const EdgeInsets.only(left: 16),
+                          //   padding: const EdgeInsets.symmetric(
+                          //     horizontal: 16,
+                          //     vertical: 16 / 2,
+                          //   ),
+                          //   decoration: BoxDecoration(
+                          //     //color: const Color(0xFF2A2D3E),
+                          //     borderRadius:
+                          //         const BorderRadius.all(Radius.circular(10)),
+                          //     border: Border.all(color: Colors.white10),
+                          //   ),
+                          //   child: Row(
+                          //     children: [
+                          //       if (!Responsive.isMobile(context))
+                          //         const Padding(
+                          //           padding: EdgeInsets.symmetric(
+                          //               horizontal: 16 / 2),
+                          //           child: Text(
+                          //             "Switch To Provider",
+                          //             style: TextStyle(
+                          //               color: CupertinoColors.black,
+                          //             ),
+                          //           ),
+                          //         ),
+                          //       //Icon(Icons.keyboard_arrow_down),
+                          //       Switch.adaptive(
+                          //         value: false,
+                          //         inactiveThumbColor: Colors.blue,
+                          //         inactiveTrackColor: Colors.black45,
+                          //         onChanged: (value) {},
+                          //       ),
+                          //     ],
+                          //   ),
+                          // ),
                         ],
                       ),
                       const SizedBox(height: 16.0),

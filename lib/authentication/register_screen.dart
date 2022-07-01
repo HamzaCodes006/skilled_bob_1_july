@@ -100,7 +100,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           style: TextStyle(
                             fontSize: size.height * 0.028,
                             // fontWeight: FontWeight.bold,
-                            // color: Colors.white
+                            color: Colors.blue,
                           ),
                           decoration: InputDecoration(
                             fillColor: Colors.blue[200]!.withOpacity(0.4),
@@ -145,14 +145,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         child: TextFormField(
                           style: TextStyle(
                             fontSize: size.height * 0.025,
-                            // fontWeight: FontWeight.bold,
-                            //color: Colors.white
+                            color: Colors.blue,
                           ),
                           decoration: InputDecoration(
                             fillColor: Colors.blue[200]!.withOpacity(0.4),
                             filled: true,
-                            //hoverColor: kDarkBlue,
-                            // helperText: 'Add Text',
                             hintStyle: const TextStyle(
                               fontSize: 17.0,
                               color: Colors.grey,
@@ -177,7 +174,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               borderSide: BorderSide(
                                   color: Theme.of(context).primaryColor),
                             ),
-                            // focusColor: kOrange,
                           ),
                           keyboardType: TextInputType.emailAddress,
                           textInputAction: TextInputAction.next,
@@ -192,8 +188,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           obscureText: true,
                           style: TextStyle(
                             fontSize: size.height * 0.025,
-                            // fontWeight: FontWeight.bold,
-                            //color: Colors.white
+                            color: Colors.blue,
                           ),
                           decoration: InputDecoration(
                             fillColor: Colors.blue[200]!.withOpacity(0.4),
@@ -239,14 +234,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           obscureText: true,
                           style: TextStyle(
                             fontSize: size.height * 0.025,
-                            // fontWeight: FontWeight.bold,
-                            //color: Colors.white
+                            color: Colors.blue,
                           ),
                           decoration: InputDecoration(
                             fillColor: Colors.blue[200]!.withOpacity(0.4),
                             filled: true,
-                            //hoverColor: kDarkBlue,
-                            // helperText: 'Add Text',
                             hintStyle: const TextStyle(
                               fontSize: 17.0,
                               color: Colors.grey,
@@ -319,7 +311,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const Text(
-                      'Already have an account?  ',
+                      'Already have an account ?  ',
                       style: TextStyle(color: Colors.grey, fontSize: 15),
                     ),
                     GestureDetector(

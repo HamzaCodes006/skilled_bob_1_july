@@ -317,8 +317,12 @@ class _MyServicesScreenState extends State<MyServicesScreen> {
                       choices.length,
                       (index) {
                         return GestureDetector(
-                          onTap: (){
-                            Navigator.pushNamed(context, JobDetail.id);
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => JobDetail()));
+                            // Navigator.pushNamed(context, JobDetail.id);
                           },
                           child: Padding(
                             padding: const EdgeInsets.symmetric(
@@ -327,7 +331,11 @@ class _MyServicesScreenState extends State<MyServicesScreen> {
                             ),
                             child: InkWell(
                               onTap: () {
-                                Navigator.pushNamed(context, JobDetail.id);
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => JobDetail()));
+                                // Navigator.pushNamed(context, JobDetail.id);
                               },
                               child: Container(
                                 width: 270,
@@ -350,7 +358,7 @@ class _MyServicesScreenState extends State<MyServicesScreen> {
                                   ),
                                 ),
                                 child: InkWell(
-                                  onTap: (){
+                                  onTap: () {
                                     Navigator.push(
                                         context,
                                         MaterialPageRoute(
@@ -358,7 +366,8 @@ class _MyServicesScreenState extends State<MyServicesScreen> {
                                   },
                                   child: Column(
 //mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Container(
 //width: 270,
@@ -366,7 +375,8 @@ class _MyServicesScreenState extends State<MyServicesScreen> {
                                         child: Stack(
                                           children: [
                                             ClipRRect(
-                                              borderRadius: const BorderRadius.only(
+                                              borderRadius:
+                                                  const BorderRadius.only(
 //topLeft: Radius.circular(10),
                                                 topRight: Radius.circular(30),
                                               ),
@@ -378,8 +388,8 @@ class _MyServicesScreenState extends State<MyServicesScreen> {
                                             Positioned(
                                               right: 1,
                                               child: Padding(
-                                                padding:
-                                                    EdgeInsets.only(right: 15.0),
+                                                padding: EdgeInsets.only(
+                                                    right: 15.0),
                                                 child: IconButton(
                                                     onPressed: () {
                                                       setState(() {
@@ -396,7 +406,8 @@ class _MyServicesScreenState extends State<MyServicesScreen> {
                                                     },
                                                     icon: favorite == false
                                                         ? const Icon(
-                                                            Icons.favorite_border,
+                                                            Icons
+                                                                .favorite_border,
                                                             color: Colors.white,
                                                             size: 26,
                                                           )
@@ -421,7 +432,8 @@ class _MyServicesScreenState extends State<MyServicesScreen> {
                                           children: [
                                             Row(
                                               mainAxisAlignment:
-                                                  MainAxisAlignment.spaceBetween,
+                                                  MainAxisAlignment
+                                                      .spaceBetween,
                                               children: [
                                                 const Text(
                                                   'Car Service Name',
@@ -429,13 +441,13 @@ class _MyServicesScreenState extends State<MyServicesScreen> {
                                                     fontSize: 18,
                                                     fontWeight: FontWeight.bold,
                                                     color: Colors.black87,
-//fontFamily: 'Dongle',
                                                   ),
                                                 ),
                                                 Row(
                                                   children: const [
                                                     Icon(Icons.star,
-                                                        color: kOrange, size: 16),
+                                                        color: kOrange,
+                                                        size: 16),
                                                     Text(
                                                       '3.45',
                                                       style: TextStyle(

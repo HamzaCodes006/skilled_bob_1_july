@@ -110,7 +110,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           style: const TextStyle(
                               fontSize: 18,
                               // fontWeight: FontWeight.bold,
-                              color: Colors.white),
+                              color: Colors.blue),
                           decoration: InputDecoration(
                             fillColor: Colors.blue[200]!.withOpacity(0.4),
                             filled: true,
@@ -156,7 +156,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           style: const TextStyle(
                               fontSize: 18,
                               // fontWeight: FontWeight.bold,
-                              color: Colors.white),
+                              color: Colors.blue),
                           decoration: InputDecoration(
                             fillColor: Colors.blue[200]!.withOpacity(0.4),
                             filled: true,

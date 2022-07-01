@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:skilled_bob_app_web/Providers/menu_controller.dart';
 import 'package:skilled_bob_app_web/responsive.dart';
 
+import '../Provider/provider_profile_screen.dart';
 import '../constant.dart';
 import 'dashboard.dart';
 
@@ -17,6 +18,7 @@ class MyFavorites extends StatefulWidget {
 
 class _MyFavoritesState extends State<MyFavorites> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  bool convert = false;
   @override
   Widget build(BuildContext context) {
     return Responsive(
@@ -866,46 +868,69 @@ class _MyFavoritesState extends State<MyFavorites> {
                               icon: Icon(Icons.menu),
                             ),
                           Text(
-                            "Dashboard",
-                            style: Theme.of(context).textTheme.headline6,
+                            "My Favorites",
+                            style: Theme.of(context).textTheme.headline5,
                           ),
                           Spacer(flex: Responsive.isDesktop(context) ? 2 : 1),
-                          //Expanded(child: SearchField()),
-                          Container(
-                            margin: const EdgeInsets.only(left: 16),
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 16,
-                              vertical: 16 / 2,
-                            ),
-                            decoration: BoxDecoration(
-                              //color: const Color(0xFF2A2D3E),
-                              borderRadius:
-                                  const BorderRadius.all(Radius.circular(10)),
-                              border: Border.all(color: Colors.white10),
-                            ),
-                            child: Row(
-                              children: [
-                                if (!Responsive.isMobile(context))
-                                  const Padding(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 16 / 2),
-                                    child: Text(
-                                      "Switch To Provider",
-                                      style: TextStyle(
-                                        color: CupertinoColors.black,
-                                      ),
-                                    ),
+                          Expanded(
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: SwitchListTile(
+                                  title: const Text(
+                                    'Customer Mode',
+                                    style: kBodyTextBlack,
                                   ),
-                                //Icon(Icons.keyboard_arrow_down),
-                                Switch.adaptive(
-                                  value: false,
-                                  inactiveThumbColor: Colors.blue,
-                                  inactiveTrackColor: Colors.black45,
-                                  onChanged: (value) {},
-                                ),
-                              ],
+                                  subtitle: const Text(
+                                    'Turn switch on to go to provider Mode.',
+                                    style: kBodyTextGrey,
+                                  ),
+                                  activeColor: kLightBlue,
+                                  value: convert,
+                                  onChanged: (selected) {
+                                    setState(() {
+                                      convert = !convert;
+
+                                      Navigator.pushReplacementNamed(
+                                          context, ProviderProfileScreen.id);
+                                    });
+                                  }),
                             ),
                           ),
+                          // Container(
+                          //   margin: const EdgeInsets.only(left: 16),
+                          //   padding: const EdgeInsets.symmetric(
+                          //     horizontal: 16,
+                          //     vertical: 16 / 2,
+                          //   ),
+                          //   decoration: BoxDecoration(
+                          //     //color: const Color(0xFF2A2D3E),
+                          //     borderRadius:
+                          //         const BorderRadius.all(Radius.circular(10)),
+                          //     border: Border.all(color: Colors.white10),
+                          //   ),
+                          //   child: Row(
+                          //     children: [
+                          //       if (!Responsive.isMobile(context))
+                          //         const Padding(
+                          //           padding: EdgeInsets.symmetric(
+                          //               horizontal: 16 / 2),
+                          //           child: Text(
+                          //             "Switch To Provider",
+                          //             style: TextStyle(
+                          //               color: CupertinoColors.black,
+                          //             ),
+                          //           ),
+                          //         ),
+                          //       //Icon(Icons.keyboard_arrow_down),
+                          //       Switch.adaptive(
+                          //         value: false,
+                          //         inactiveThumbColor: Colors.blue,
+                          //         inactiveTrackColor: Colors.black45,
+                          //         onChanged: (value) {},
+                          //       ),
+                          //     ],
+                          //   ),
+                          // ),
                         ],
                       ),
                       const SizedBox(height: 16.0),
