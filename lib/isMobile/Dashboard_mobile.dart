@@ -1,139 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:skilled_bob_app_web/Customer/dashboard.dart';
-import 'package:skilled_bob_app_web/Customer/index_page.dart';
-import 'package:skilled_bob_app_web/Provider/post_service_screen.dart';
-import 'package:skilled_bob_app_web/Provider/provider_jobs_screen.dart';
-import 'package:skilled_bob_app_web/Provider/provider_profile_screen.dart';
-import 'package:skilled_bob_app_web/authentication/login_screen.dart';
-import 'package:skilled_bob_app_web/authentication/register_screen.dart';
 
-import '../constant.dart';
-import 'job_requests.dart';
+import '../Customer/index_page.dart';
+import '../Customer/my_bookings.dart';
+import '../Customer/my_favorites.dart';
+import '../Customer/post_a_request_customer.dart';
+import '../Customer/profile.dart';
+import '../Provider/provider_dashboard.dart';
+import '../authentication/register_screen.dart';
 
-class ProviderDashboard extends StatefulWidget {
-  static const String id = 'ProviderDashboard';
-  const ProviderDashboard({Key? key}) : super(key: key);
+class DashboardMobile extends StatefulWidget {
+  const DashboardMobile({Key? key}) : super(key: key);
 
   @override
-  _ProviderDashboardState createState() => _ProviderDashboardState();
+  _DashboardMobileState createState() => _DashboardMobileState();
 }
 
-class _ProviderDashboardState extends State<ProviderDashboard> {
-  bool convert = true;
-
+class _DashboardMobileState extends State<DashboardMobile> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white70.withOpacity(0.96),
-        drawer: Drawer(
-          child: Material(
-            color: Colors.blueAccent,
-            child: SafeArea(
-              child: ListView(
-                padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                children: [
-                  const SizedBox(
-                    height: 40.0,
-                  ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        height: 90,
-                        decoration: const BoxDecoration(
-                          shape: BoxShape.circle,
-                          image: DecorationImage(
-                            image: AssetImage('images/car service.jpg'),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 50.0,
-                  ),
-                  BuildMenuItem(
-                    icon: Icons.account_circle_outlined,
-                    text: 'My Profile',
-                    onPresed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) =>
-                                  const ProviderProfileScreen()));
-                    },
-                  ),
-                  BuildMenuItem(
-                    icon: Icons.shopping_bag_rounded,
-                    text: 'My Jobs',
-                    onPresed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) =>
-                                  const ProviderJobsScreen()));
-                    },
-                  ),
-                  BuildMenuItem(
-                    icon: Icons.post_add,
-                    text: 'Post My Service',
-                    onPresed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const PostServiceScreen()));
-                    },
-                  ),
-                  BuildMenuItem(
-                    icon: Icons.chat,
-                    text: 'Chat',
-                    onPresed: () {},
-                  ),
-                  BuildMenuItem(
-                    icon: Icons.request_page_outlined,
-                    text: 'Job Requests',
-                    onPresed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const JobRequests()));
-                    },
-                  ),
-                  BuildMenuItem(
-                    icon: Icons.language,
-                    text: 'Languages',
-                    onPresed: () {
-                      //Navigator.pushNamed(context, MyFavorites.id);
-                    },
-                  ),
-                  const SizedBox(height: 35),
-                  const Divider(color: Colors.white, thickness: 1.4),
-                  const SizedBox(
-                    height: 35.0,
-                  ),
-                  BuildMenuItem(
-                    icon: Icons.help,
-                    text: 'Help',
-                    onPresed: () {},
-                  ),
-                  BuildMenuItem(
-                    icon: Icons.logout,
-                    text: 'Log Out',
-                    onPresed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const LoginScreen(),
-                        ),
-                      );
-                    },
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ),
         appBar: AppBar(
           iconTheme: const IconThemeData(color: Colors.white),
           shadowColor: Colors.transparent,
@@ -148,6 +35,17 @@ class _ProviderDashboardState extends State<ProviderDashboard> {
                 fontSize: 20,
               ),
             ),
+          ),
+          leading: IconButton(
+            color: Colors.white,
+            icon: const Icon(
+              Icons.arrow_back_ios_sharp,
+              color: Colors.white,
+              size: 20,
+            ),
+            onPressed: () {
+              Navigator.pushNamed(context, IndexPage.id);
+            },
           ),
           actions: [
             Padding(
@@ -216,8 +114,7 @@ class _ProviderDashboardState extends State<ProviderDashboard> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) =>
-                                          const ProviderProfileScreen()));
+                                      builder: (context) => const Profile()));
                             },
                             child: Container(
                                 decoration: const BoxDecoration(
@@ -283,7 +180,7 @@ class _ProviderDashboardState extends State<ProviderDashboard> {
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) =>
-                                          const ProviderJobsScreen()));
+                                          const MyFavorites()));
                             },
                             child: Container(
                                 decoration: const BoxDecoration(
@@ -303,7 +200,7 @@ class _ProviderDashboardState extends State<ProviderDashboard> {
                                           Row(
                                             children: [
                                               const Icon(
-                                                Icons.shopping_bag,
+                                                Icons.favorite_border,
                                                 color: Colors.blue,
                                                 size: 26,
                                               ),
@@ -319,7 +216,7 @@ class _ProviderDashboardState extends State<ProviderDashboard> {
                                                 width: 15,
                                               ),
                                               const Text(
-                                                'My Jobs',
+                                                'My Favorite',
                                                 style: TextStyle(
                                                   fontSize: 16,
                                                   fontWeight: FontWeight.bold,
@@ -339,7 +236,7 @@ class _ProviderDashboardState extends State<ProviderDashboard> {
                                 )),
                           ),
                         ),
-                        //my job
+                        //booking
                         Padding(
                           padding: const EdgeInsets.only(
                               top: 10.0, right: 20, left: 20),
@@ -349,7 +246,73 @@ class _ProviderDashboardState extends State<ProviderDashboard> {
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) =>
-                                          const PostServiceScreen()));
+                                          const MyBookings()));
+                            },
+                            child: Container(
+                                decoration: const BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(12)),
+                                ),
+                                //height: 300,
+                                child: Column(
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.all(20.0),
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Row(
+                                            children: [
+                                              Image.asset(
+                                                'images/one finger.png',
+                                                color: Colors.blue,
+                                                height: 25,
+                                              ),
+                                              const SizedBox(
+                                                width: 15,
+                                              ),
+                                              Container(
+                                                color: Colors.black45,
+                                                height: 26,
+                                                width: 1.5,
+                                              ),
+                                              const SizedBox(
+                                                width: 15,
+                                              ),
+                                              const Text(
+                                                'Booking',
+                                                style: TextStyle(
+                                                  fontSize: 16,
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                          const Icon(
+                                            Icons.arrow_forward_ios,
+                                            size: 17,
+                                            color: Colors.black54,
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                )),
+                          ),
+                        ),
+                        //post a job
+                        Padding(
+                          padding: const EdgeInsets.only(
+                              top: 10.0, right: 20, left: 20),
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const PostARequestCustomer()));
                             },
                             child: Container(
                                 decoration: const BoxDecoration(
@@ -371,8 +334,13 @@ class _ProviderDashboardState extends State<ProviderDashboard> {
                                               const Icon(
                                                 Icons.post_add,
                                                 color: Colors.blue,
-                                                size: 26,
+                                                size: 25,
                                               ),
+                                              // Image.asset(
+                                              //   'images/writing down.png',
+                                              //   color: Colors.blue,
+                                              //   height: 25,
+                                              // ),
                                               const SizedBox(
                                                 width: 15,
                                               ),
@@ -385,7 +353,7 @@ class _ProviderDashboardState extends State<ProviderDashboard> {
                                                 width: 15,
                                               ),
                                               const Text(
-                                                'Post My Service',
+                                                'Post A job',
                                                 style: TextStyle(
                                                   fontSize: 16,
                                                   fontWeight: FontWeight.bold,
@@ -439,11 +407,6 @@ class _ProviderDashboardState extends State<ProviderDashboard> {
                                                 color: Colors.blue,
                                                 size: 25,
                                               ),
-                                              // Image.asset(
-                                              //   'images/writing down.png',
-                                              //   color: Colors.blue,
-                                              //   height: 25,
-                                              // ),
                                               const SizedBox(
                                                 width: 15,
                                               ),
@@ -476,17 +439,17 @@ class _ProviderDashboardState extends State<ProviderDashboard> {
                                 )),
                           ),
                         ),
-                        //job requests
+                        //switch to provider
                         Padding(
                           padding: const EdgeInsets.only(
                               top: 10.0, right: 20, left: 20),
                           child: InkWell(
                             onTap: () {
-                              Navigator.push(
+                              Navigator.pushReplacement(
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) =>
-                                          const JobRequests()));
+                                          const ProviderDashboard()));
                             },
                             child: Container(
                                 decoration: const BoxDecoration(
@@ -506,15 +469,10 @@ class _ProviderDashboardState extends State<ProviderDashboard> {
                                           Row(
                                             children: [
                                               const Icon(
-                                                Icons.request_page_outlined,
+                                                Icons.switch_left,
                                                 color: Colors.blue,
                                                 size: 25,
                                               ),
-                                              // Image.asset(
-                                              //   'images/writing down.png',
-                                              //   color: Colors.blue,
-                                              //   height: 25,
-                                              // ),
                                               const SizedBox(
                                                 width: 15,
                                               ),
@@ -527,7 +485,7 @@ class _ProviderDashboardState extends State<ProviderDashboard> {
                                                 width: 15,
                                               ),
                                               const Text(
-                                                'Job Requests',
+                                                'Switch To Provider',
                                                 style: TextStyle(
                                                   fontSize: 16,
                                                   fontWeight: FontWeight.bold,
@@ -547,31 +505,7 @@ class _ProviderDashboardState extends State<ProviderDashboard> {
                                 )),
                           ),
                         ),
-                        //switch to customer
-                        Expanded(
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: SwitchListTile(
-                                title: const Text(
-                                  'Provider Mode',
-                                  style: kBodyTextBlack,
-                                ),
-                                subtitle: const Text(
-                                  'Turn switch off  to go to Customer Mode.',
-                                  style: kBodyTextGrey,
-                                ),
-                                activeColor: kLightBlue,
-                                value: convert,
-                                onChanged: (selected) {
-                                  setState(() {
-                                    convert = !convert;
-                                    Navigator.pushReplacementNamed(
-                                        context, Dashboard.id);
-                                  });
-                                }),
-                          ),
-                        ),
-                        // logout
+                        //logout
                         Padding(
                           padding: const EdgeInsets.only(
                               top: 10.0, right: 20, left: 20),
