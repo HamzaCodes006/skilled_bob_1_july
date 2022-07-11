@@ -47,29 +47,29 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyBLlSJdXKPY2pgoNgy132yOK2Hb89Q2U-k',
-    appId: '1:287537178636:web:a3dfb9e80d470504766629',
-    messagingSenderId: '287537178636',
-    projectId: 'multibob-9ca5c',
-    authDomain: 'multibob-9ca5c.firebaseapp.com',
-    storageBucket: 'multibob-9ca5c.appspot.com',
+    apiKey: 'AIzaSyBmAzhMuXkTHvQoBwH9FhVX0sU1ebITe44',
+    appId: '1:433553365514:web:ae3ea98e0854917bea5df3',
+    messagingSenderId: '433553365514',
+    projectId: 'multibob-808c1',
+    authDomain: 'multibob-808c1.firebaseapp.com',
+    storageBucket: 'multibob-808c1.appspot.com',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCsNUmgVh51lt3y-okDWVTYg5hsRzOzCMQ',
-    appId: '1:287537178636:android:cb833f35acc0db05766629',
-    messagingSenderId: '287537178636',
-    projectId: 'multibob-9ca5c',
-    storageBucket: 'multibob-9ca5c.appspot.com',
+    apiKey: 'AIzaSyCbhDiPClAmLNs2zmyHUi5gsbS7VndIKqY',
+    appId: '1:433553365514:android:dd148ac6deb4810eea5df3',
+    messagingSenderId: '433553365514',
+    projectId: 'multibob-808c1',
+    storageBucket: 'multibob-808c1.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyB7wf_tijwcfjReVPYutbs50MuwevN7IZ4',
-    appId: '1:287537178636:ios:bab2756b3afe2f10766629',
-    messagingSenderId: '287537178636',
-    projectId: 'multibob-9ca5c',
-    storageBucket: 'multibob-9ca5c.appspot.com',
-    iosClientId: '287537178636-69fkbcjj8k87bc9e6t7iqscko4gbu7rn.apps.googleusercontent.com',
+    apiKey: 'AIzaSyCc90esRErifLI2EUnVWfpN3Fec-9hPPos',
+    appId: '1:433553365514:ios:e08fd04aa2d77d8dea5df3',
+    messagingSenderId: '433553365514',
+    projectId: 'multibob-808c1',
+    storageBucket: 'multibob-808c1.appspot.com',
+    iosClientId: '433553365514-4v3hkomt827fjp3rcmrm38jfo2stio1f.apps.googleusercontent.com',
     iosBundleId: 'com.example.skilledBobAppWeb',
   );
 }

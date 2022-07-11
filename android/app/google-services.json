@@ -1,41 +1,34 @@
 {
   "project_info": {
-    "project_number": "287537178636",
-    "project_id": "multibob-9ca5c",
-    "storage_bucket": "multibob-9ca5c.appspot.com"
+    "project_number": "433553365514",
+    "project_id": "multibob-808c1",
+    "storage_bucket": "multibob-808c1.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:287537178636:android:cb833f35acc0db05766629",
+        "mobilesdk_app_id": "1:433553365514:android:dd148ac6deb4810eea5df3",
         "android_client_info": {
           "package_name": "com.example.skilled_bob_app_web"
         }
       },
       "oauth_client": [
         {
-          "client_id": "287537178636-5qo1c9s86eupqocub9fhdvds2j489o9i.apps.googleusercontent.com",
+          "client_id": "433553365514-hu935mrt7c8mam13984i92o7t6kpp1o2.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCsNUmgVh51lt3y-okDWVTYg5hsRzOzCMQ"
+          "current_key": "AIzaSyCbhDiPClAmLNs2zmyHUi5gsbS7VndIKqY"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "287537178636-5qo1c9s86eupqocub9fhdvds2j489o9i.apps.googleusercontent.com",
+              "client_id": "433553365514-hu935mrt7c8mam13984i92o7t6kpp1o2.apps.googleusercontent.com",
               "client_type": 3
-            },
-            {
-              "client_id": "287537178636-69fkbcjj8k87bc9e6t7iqscko4gbu7rn.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.example.skilledBobAppWeb"
-              }
             }
           ]
         }
