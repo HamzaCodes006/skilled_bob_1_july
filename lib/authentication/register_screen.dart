@@ -304,15 +304,15 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     ),
                     child: FlatButton(
                       onPressed: () {
-                        AwesomeSnackbarContent(
-                          title: 'On Snap!',
-                          message:
-                          'This is an example error message that will be shown in the body of snackbar!',
-
-                          /// change contentType to ContentType.success, ContentType.warning or ContentType.help for variants
-                          contentType: ContentType.failure,
-                        ),
-                        );
+                        // AwesomeSnackbarContent(
+                        //   title: 'On Snap!',
+                        //   message:
+                        //   'This is an example error message that will be shown in the body of snackbar!',
+                        //
+                        //   /// change contentType to ContentType.success, ContentType.warning or ContentType.help for variants
+                        //   contentType: ContentType.failure,
+                        // ),
+                        // );
                         Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
