@@ -42,7 +42,7 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Column(
               children: [
                 SizedBox(
-                  height: size.height * 0.02,
+                  height: size.height * 0.18,
                 ),
                 Center(
                   child: Column(
@@ -57,7 +57,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                       const Text(
-                        'SkilledBob',
+                        'MultiBob',
                         style: TextStyle(
                           fontSize: 40.0,
                           fontWeight: FontWeight.bold,
@@ -68,21 +68,21 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
                 SizedBox(
-                  height: size.height * 0.01,
+                  height: size.height * 0.02,
                 ),
                 Container(
                   // margin: const EdgeInsets.only(left: 30, top: 500, right: 30, bottom: 100),
                   height: Responsive.hwValue(
                     context,
                     des: size.height * 0.5,
-                    teb: size.height * 0.5,
-                    mob: size.height * 0.5,
+                    teb: size.height * 0.3,
+                    mob: size.height * 0.3,
                   ),
                   width: Responsive.hwValue(
                     context,
                     des: size.width * 0.4,
-                    teb: size.width * 0.5,
-                    mob: size.width * 0.5,
+                    teb: size.width * 0.8,
+                    mob: size.width * 0.8,
                   ),
                   decoration: BoxDecoration(
                     color: Colors.white,
@@ -107,8 +107,8 @@ class _LoginScreenState extends State<LoginScreen> {
                             vertical: 8.0, horizontal: 25.0),
                         child: TextFormField(
                           controller: emailController,
-                          style: const TextStyle(
-                              fontSize: 18,
+                          style: TextStyle(
+                              fontSize: size.height * 0.018,
                               // fontWeight: FontWeight.bold,
                               color: Colors.blue),
                           decoration: InputDecoration(
@@ -153,9 +153,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         child: TextFormField(
                           controller: passwordController,
                           obscureText: true,
-                          style: const TextStyle(
-                              fontSize: 18,
-                              // fontWeight: FontWeight.bold,
+                          style: TextStyle(
+                              fontSize: size.height * 0.018,
                               color: Colors.blue),
                           decoration: InputDecoration(
                             fillColor: Colors.blue[200]!.withOpacity(0.4),
@@ -224,7 +223,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               ],
                             ),
                           )),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Row(
@@ -259,8 +258,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     width: Responsive.hwValue(
                       context,
                       des: size.width * 0.4,
-                      teb: size.width * 0.5,
-                      mob: size.width * 0.5,
+                      teb: size.width * 0.8,
+                      mob: size.width * 0.8,
                     ),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10.0),

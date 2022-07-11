@@ -42,7 +42,7 @@ class _PostJobScreenDesktopState extends State<PostJobScreenDesktop> {
                 child: Image.asset('images/logo.png'),
               ),
               const Text(
-                'SkilledBob',
+                'MultiBob',
                 style: TextStyle(
                   color: Colors.black87,
                   letterSpacing: 1.0,

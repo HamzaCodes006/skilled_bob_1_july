@@ -244,10 +244,10 @@ class _JobDetailPageDesktopState extends State<JobDetailPageDesktop> {
                           child: Container(
                             width: size.width * 0.3,
                             child: Text(
-                              'Post and describe the task to be done totally for Free! Sit back and the pool of skilled Bob`s'
+                              'Post and describe the task to be done totally for Free! Sit back and the pool of Multi Bob`s'
                               ' will respond with bids and offers.See the profile, skills, and ratings, from your preferred'
                               ' Bob. Make your personal decision which professional service provider you hire.'
-                              'Now relax and let the SkilledBob do his job. Please rate him and get ready for your '
+                              'Now relax and let the Multibob do his job. Please rate him and get ready for your '
                               'next job post.',
                               style: kNormalText,
                               textAlign: TextAlign.justify,
@@ -1224,7 +1224,7 @@ class _JobDetailPageDesktopState extends State<JobDetailPageDesktop> {
                         child: SizedBox(
                           width: 350,
                           child: Text(
-                            'Skilledbob is the easiest and best way to find the perfect service provider for your needs. Whether you are looking for a plumber, hairdresser, car service, carpenter, web designer or a music band. Don\'t worry, get the best BOB to do the job and service you need.',
+                            'Multibob is the easiest and best way to find the perfect service provider for your needs. Whether you are looking for a plumber, hairdresser, car service, carpenter, web designer or a music band. Don\'t worry, get the best BOB to do the job and service you need.',
                             textAlign: TextAlign.justify,
                             style: TextStyle(
                               color: Colors.white,

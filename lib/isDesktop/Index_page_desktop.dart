@@ -1,7 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
 import '../Customer/appbar_class.dart';
 import '../Customer/category.dart';
 import '../Customer/dashboard.dart';
@@ -35,12 +34,8 @@ class _IndexPageDesktopState extends State<IndexPageDesktop> {
           children: [
             CarouselSlider(
               options: CarouselOptions(
-                  // height: size.height * 0.4,
                   viewportFraction: 1.0,
-                  //enlargeCenterPage: true,
-                  // pageSnapping: true,
                   aspectRatio: 2.8,
-                  // enlargeStrategy: CenterPageEnlargeStrategy.height,                    // aspectRatio: 2.5,
                   initialPage: 0,
                   autoPlay: true,
                   autoPlayInterval: const Duration(seconds: 5),
@@ -48,8 +43,6 @@ class _IndexPageDesktopState extends State<IndexPageDesktop> {
                       const Duration(milliseconds: 1800)),
               items: imgListWeb
                   .map((item) => ClipRRect(
-                        // borderRadius:
-                        // const BorderRadius.all(Radius.circular(4.0)),
                         child: Image.asset(
                           item,
                           fit: BoxFit.fill,
@@ -85,7 +78,7 @@ class _IndexPageDesktopState extends State<IndexPageDesktop> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => Categories()));
+                                builder: (context) => const Categories()));
                       },
                       child: Container(
                         width: size.width * 0.2,
@@ -100,7 +93,6 @@ class _IndexPageDesktopState extends State<IndexPageDesktop> {
                                   0, 0), // changes position of shadow
                             ),
                           ],
-                          //color: Colors.white70.withOpacity(0.7),
                           color: kLightBlue,
                           borderRadius: const BorderRadius.only(
                             bottomLeft: Radius.circular(20),
@@ -108,15 +100,13 @@ class _IndexPageDesktopState extends State<IndexPageDesktop> {
                           ),
                         ),
                         child: Column(
-                          //mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Container(
+                            SizedBox(
                               width: size.width * 0.2,
                               height: size.height * 0.32,
                               child: ClipRRect(
                                 borderRadius: const BorderRadius.only(
-                                  //topLeft: Radius.circular(10),
                                   topRight: Radius.circular(10),
                                 ),
                                 child: Image.asset(
@@ -141,7 +131,6 @@ class _IndexPageDesktopState extends State<IndexPageDesktop> {
                                         fontSize: 18,
                                         fontWeight: FontWeight.bold,
                                         color: Colors.white,
-                                        //fontFamily: 'Dongle',
                                       ),
                                     ),
                                   ),
@@ -149,8 +138,6 @@ class _IndexPageDesktopState extends State<IndexPageDesktop> {
                                     'Car & Bike Services',
                                     style: TextStyle(
                                       fontSize: 14,
-                                      //color: Colors.white,
-                                      //fontWeight: FontWeight.bold,
                                       overflow: TextOverflow.ellipsis,
                                       color: Colors.white,
                                     ),
@@ -190,19 +177,19 @@ class _IndexPageDesktopState extends State<IndexPageDesktop> {
                       imagePath: 'images/writing down.png',
                       description:
                           'Post and describe the task for free! Please wait'
-                          ' and SkilledBob\'s group will respond with offers.'),
+                          ' and MultiBob\'s group will respond with offers.'),
                   WorkContainer(
                       size: size,
-                      title: 'CHOOSE A SKILLEDBOB YOU PREFER',
+                      title: 'CHOOSE A MULTIBOB YOU PREFER',
                       imagePath: 'images/one finger.png',
                       description:
                           'View Bob\'s favorite profile, skills, and assessments. Make a personal decision about the professional service provider you hire.'),
                   WorkContainer(
                       size: size,
-                      title: 'LIVE A SMARTER LIFE WITH SKILLEDBOB',
+                      title: 'LIVE A SMARTER LIFE WITH MULTIBOB',
                       imagePath: 'images/smart home checked.png',
                       description:
-                          'Now relax and let SkilledBob do his job. Please rate it and prepare to post the next job.'),
+                          'Now relax and let MultiBob do his job. Please rate it and prepare to post the next job.'),
 
                   // const SizedBox(height: 18),
                 ],
@@ -212,7 +199,7 @@ class _IndexPageDesktopState extends State<IndexPageDesktop> {
               padding: EdgeInsets.only(top: 25.0, bottom: 10),
               child: Center(
                 child: Text(
-                  'Why Choose SkilledBob?',
+                  'Why Choose MultiBob?',
                   style: TextStyle(
                     color: Colors.black87,
                     fontSize: 30,
@@ -231,7 +218,7 @@ class _IndexPageDesktopState extends State<IndexPageDesktop> {
                       title: 'MEET NEW CUSTOMERS ',
                       imagePath: 'images/hands.png',
                       description:
-                          'The beauty of signing up for SkilledBob. The hard part of finding a job is over.'
+                          'The beauty of signing up for MultiBob. The hard part of finding a job is over.'
                           ' You receive them directly in the e-mail box.'
                           ' You get into the position of choosing the jobs you like to do.'),
                   WorkContainer(

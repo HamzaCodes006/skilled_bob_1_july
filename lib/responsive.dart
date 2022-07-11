@@ -33,8 +33,17 @@ class Responsive extends StatelessWidget {
       MediaQuery.of(context).size.width >= 1050;
   // MediaQuery.of(context).size.width >= 650;
 
-  static bool isDesktopMobileView(BuildContext context) =>
-      MediaQuery.of(context).size.width < 650;
+  static bool isDesktopMobileView(BuildContext context) {
+    if (MediaQuery.of(context).size.width < 650) {
+      if (Platform.isAndroid || Platform.isIOS) {
+        return false;
+      } else {
+        return true;
+      }
+    } else {
+      return false;
+    }
+  }
 
   static double hwValue(BuildContext context,
       {required double des, required double teb, required double mob}) {
@@ -42,6 +51,8 @@ class Responsive extends StatelessWidget {
       return des;
     } else if (isDesktopMobileView(context)) {
       return teb;
+    } else if (isMobile(context)) {
+      return mob;
     } else {
       return mob;
     }

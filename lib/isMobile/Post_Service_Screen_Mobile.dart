@@ -66,7 +66,7 @@ class _PostServiceScreenMobileState extends State<PostServiceScreenMobile> {
                       child: Image.asset('images/logo.png'),
                     ),
                     const Text(
-                      'SkilledBob',
+                      'MultiBob',
                       style: TextStyle(
                         color: Colors.black87,
                         letterSpacing: 1.0,

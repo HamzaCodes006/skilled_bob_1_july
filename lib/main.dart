@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -18,8 +19,13 @@ import 'Customer/my_favorites.dart';
 import 'Customer/profile.dart';
 import 'Provider/provider_dashboard.dart';
 import 'authentication/login_screen.dart';
+import 'firebase_options.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
@@ -30,7 +36,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: IndexPage.id,
+      initialRoute: RegisterScreen.id,
       routes: {
         IndexPage.id: (context) => const IndexPage(),
         RegisterScreen.id: (context) => const RegisterScreen(),

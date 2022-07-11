@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:skilled_bob_app_web/Customer/index_page.dart';
 import 'package:skilled_bob_app_web/constant.dart';
-
+import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import '../responsive.dart';
 import 'login_screen.dart';
 
@@ -15,6 +15,21 @@ class RegisterScreen extends StatefulWidget {
 }
 
 class _RegisterScreenState extends State<RegisterScreen> {
+  TextEditingController userName = TextEditingController();
+  TextEditingController email = TextEditingController();
+  TextEditingController password = TextEditingController();
+  TextEditingController confirmPassword = TextEditingController();
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    userName.dispose();
+    email.dispose();
+    password.dispose();
+    confirmPassword.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -33,13 +48,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
             child: Column(
               children: [
                 SizedBox(
-                  height: size.height * 0.03,
+                  height: size.height * 0.14,
                 ),
                 Center(
                   child: Column(
                     children: [
                       Container(
-                        height: size.height * 0.15,
+                        height: size.height * 0.11,
                         decoration: const BoxDecoration(
                           shape: BoxShape.circle,
                           image: DecorationImage(
@@ -48,7 +63,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ),
                       ),
                       const Text(
-                        'SkilledBob',
+                        'MultiBob',
                         style: TextStyle(
                           fontSize: 40.0,
                           fontWeight: FontWeight.bold,
@@ -62,18 +77,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   height: size.height * 0.02,
                 ),
                 Container(
-                  // margin: const EdgeInsets.only(left: 30, top: 500, right: 30, bottom: 100),
                   height: Responsive.hwValue(
                     context,
                     des: size.height * 0.5,
                     teb: size.height * 0.5,
-                    mob: size.height * 0.5,
+                    mob: size.height * 0.33,
                   ),
                   width: Responsive.hwValue(
                     context,
                     des: size.width * 0.4,
-                    teb: size.width * 0.5,
-                    mob: size.width * 0.5,
+                    teb: size.width * 0.88,
+                    mob: size.width * 0.86,
                   ),
                   decoration: BoxDecoration(
                     color: Colors.white,
@@ -95,18 +109,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       Padding(
                         padding: EdgeInsets.symmetric(
                             vertical: size.height * 0.008,
-                            horizontal: size.width * 0.025),
+                            horizontal: size.width * 0.05),
                         child: TextFormField(
+                          controller: userName,
                           style: TextStyle(
-                            fontSize: size.height * 0.028,
-                            // fontWeight: FontWeight.bold,
+                            fontSize: size.height * 0.018,
                             color: Colors.blue,
                           ),
                           decoration: InputDecoration(
                             fillColor: Colors.blue[200]!.withOpacity(0.4),
                             filled: true,
-                            //hoverColor: kDarkBlue,
-                            // helperText: 'Add Text',
                             hintStyle: const TextStyle(
                               fontSize: 17.0,
                               color: Colors.grey,
@@ -131,7 +143,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               borderSide: BorderSide(
                                   color: Theme.of(context).primaryColor),
                             ),
-                            // focusColor: kOrange,
                           ),
                           keyboardType: TextInputType.text,
                           textInputAction: TextInputAction.next,
@@ -141,10 +152,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       Padding(
                         padding: EdgeInsets.symmetric(
                             vertical: size.height * 0.008,
-                            horizontal: size.width * 0.025),
+                            horizontal: size.width * 0.05),
                         child: TextFormField(
+                          controller: email,
                           style: TextStyle(
-                            fontSize: size.height * 0.025,
+                            fontSize: size.height * 0.018,
                             color: Colors.blue,
                           ),
                           decoration: InputDecoration(
@@ -183,18 +195,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       Padding(
                         padding: EdgeInsets.symmetric(
                             vertical: size.height * 0.008,
-                            horizontal: size.width * 0.025),
+                            horizontal: size.width * 0.05),
                         child: TextFormField(
+                          controller: password,
                           obscureText: true,
                           style: TextStyle(
-                            fontSize: size.height * 0.025,
+                            fontSize: size.height * 0.018,
                             color: Colors.blue,
                           ),
                           decoration: InputDecoration(
                             fillColor: Colors.blue[200]!.withOpacity(0.4),
                             filled: true,
-                            //hoverColor: kDarkBlue,
-                            // helperText: 'Add Text',
                             hintStyle: const TextStyle(
                               fontSize: 17.0,
                               color: Colors.grey,
@@ -219,7 +230,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               borderSide: BorderSide(
                                   color: Theme.of(context).primaryColor),
                             ),
-                            // focusColor: kOrange,
                           ),
                           keyboardType: TextInputType.text,
                           textInputAction: TextInputAction.next,
@@ -229,11 +239,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       Padding(
                         padding: EdgeInsets.symmetric(
                             vertical: size.height * 0.008,
-                            horizontal: size.width * 0.025),
+                            horizontal: size.width * 0.05),
                         child: TextFormField(
+                          controller: confirmPassword,
                           obscureText: true,
                           style: TextStyle(
-                            fontSize: size.height * 0.025,
+                            fontSize: size.height * 0.018,
                             color: Colors.blue,
                           ),
                           decoration: InputDecoration(
@@ -284,8 +295,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     width: Responsive.hwValue(
                       context,
                       des: size.width * 0.4,
-                      teb: size.width * 0.5,
-                      mob: size.width * 0.5,
+                      teb: size.width * 0.9,
+                      mob: size.width,
                     ),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10.0),
@@ -293,6 +304,15 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     ),
                     child: FlatButton(
                       onPressed: () {
+                        AwesomeSnackbarContent(
+                          title: 'On Snap!',
+                          message:
+                          'This is an example error message that will be shown in the body of snackbar!',
+
+                          /// change contentType to ContentType.success, ContentType.warning or ContentType.help for variants
+                          contentType: ContentType.failure,
+                        ),
+                        );
                         Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(

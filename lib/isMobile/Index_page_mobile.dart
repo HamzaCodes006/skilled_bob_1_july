@@ -502,7 +502,7 @@ class _IndexPageMobileState extends State<IndexPageMobile> {
                   Padding(
                     padding: EdgeInsets.only(left: 18.0, top: 20),
                     child: Text(
-                      'How SkilledBob Works',
+                      'How MultiBob Works',
                       style: TextStyle(
                         fontWeight: FontWeight.w700,
                         fontSize: 18,
@@ -624,7 +624,7 @@ class _IndexPageMobileState extends State<IndexPageMobile> {
                                       Padding(
                                         padding: EdgeInsets.only(top: 8.0),
                                         child: Text(
-                                          'Post and describe the task for free! Please wait and SkilledBob\'s group will respond with offers.',
+                                          'Post and describe the task for free! Please wait and MultiBob\'s group will respond with offers.',
                                           style: TextStyle(
                                             fontSize: 14,
                                             fontWeight: FontWeight.normal,
@@ -671,7 +671,7 @@ class _IndexPageMobileState extends State<IndexPageMobile> {
                                         CrossAxisAlignment.start,
                                     children: const [
                                       Text(
-                                        'CHOOSE A SKILLEDBOB YOU PREFER',
+                                        'CHOOSE A MULTIBOB YOU PREFER',
                                         style: TextStyle(
                                           fontSize: 16,
                                           fontWeight: FontWeight.bold,
@@ -728,7 +728,7 @@ class _IndexPageMobileState extends State<IndexPageMobile> {
                                         CrossAxisAlignment.start,
                                     children: const [
                                       Text(
-                                        'LIVE A SMARTER LIFE WITH SKILLEDBOB',
+                                        'LIVE A SMARTER LIFE WITH MULTIBOB',
                                         style: TextStyle(
                                           fontSize: 16,
                                           fontWeight: FontWeight.bold,
@@ -738,7 +738,7 @@ class _IndexPageMobileState extends State<IndexPageMobile> {
                                       Padding(
                                         padding: EdgeInsets.only(top: 8.0),
                                         child: Text(
-                                          'Now relax and let SkilledBob do his job. Please rate it and prepare to post the next job.',
+                                          'Now relax and let MULTIBob do his job. Please rate it and prepare to post the next job.',
                                           style: TextStyle(
                                             fontSize: 14,
                                             fontWeight: FontWeight.normal,
@@ -777,7 +777,7 @@ class _IndexPageMobileState extends State<IndexPageMobile> {
                   Padding(
                     padding: EdgeInsets.only(left: 18.0, top: 10),
                     child: Text(
-                      'Why Choose SkilledBob',
+                      'Why Choose MultiBob',
                       style: TextStyle(
                         fontWeight: FontWeight.w700,
                         fontSize: 18,
@@ -897,7 +897,7 @@ class _IndexPageMobileState extends State<IndexPageMobile> {
                                       Padding(
                                         padding: EdgeInsets.only(top: 8.0),
                                         child: Text(
-                                          'The beauty of signing up for SkilledBob. The hard part of finding a job is over. You receive them directly in the e-mail box. You get into the position of choosing the jobs you like to do.',
+                                          'The beauty of signing up for MultiBob. The hard part of finding a job is over. You receive them directly in the e-mail box. You get into the position of choosing the jobs you like to do.',
                                           style: TextStyle(
                                             fontSize: 14,
                                             fontWeight: FontWeight.normal,
